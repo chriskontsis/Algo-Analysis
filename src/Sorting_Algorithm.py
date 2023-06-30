@@ -23,7 +23,7 @@ class SortingAlgorithm:
             runtime = time.time() - start_time
 
             self.runtime_data[0].append(size)
-            self.runtime_date[1].append(runtime)
+            self.runtime_data[1].append(runtime)
 
 
     def bubbleSort(self, arr):
@@ -34,4 +34,4 @@ class SortingAlgorithm:
                 if(arr[j] > arr[j+1]):
                     arr[j], arr[j+1] = arr[j+1], arr[j]
 
-
+        

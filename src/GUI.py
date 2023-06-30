@@ -75,8 +75,8 @@ class AlgorithmRuntimeVisualizer(QWidget):
         algorithm.run(algorithm_name)
 
         # Retrieve the runtime data from the algorithm object
-        x_values, y_values = algorithm.get_runtime_data()
-
+        x_values, y_values = algorithm.runtime_data
+        print(x_values, y_values)
         # Clear the previous plot
         self.figure.clear()
 
@@ -86,6 +86,7 @@ class AlgorithmRuntimeVisualizer(QWidget):
         ax.set_xlabel('Input Size')
         ax.set_ylabel('Runtime (seconds)')
         ax.set_title('Algorithm Runtime Analysis')
+        self.canvas.draw()
 
 # Create a QApplication instance
 app = QApplication([])
