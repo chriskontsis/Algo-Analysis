@@ -5,12 +5,13 @@ class SortingAlgorithm:
         self.runtime_data = ([],[])
 
     def run(self, algo_name):
-        input_sizes = [10,50,100,200,500,1000,2000]
+        input_sizes = [10,50,100,200,500,1000,2000,5000]
 
         start_time = time.time()
 
         algorithms = {
             "Bubble Sort":self.bubbleSort,
+            "Merge Sort":self.mergeSort,
         }
 
         algorithm = algorithms[algo_name]
@@ -33,5 +34,37 @@ class SortingAlgorithm:
             for j in range(n - i - 1):
                 if(arr[j] > arr[j+1]):
                     arr[j], arr[j+1] = arr[j+1], arr[j]
+
+    def mergeSort(self, array):
+        if(len(array) > 1):
+            r = len(array)//2
+            L = array[:r]
+            M = array[r:]
+
+            self.mergeSort(L)
+            self.mergeSort(M)
+
+            i = j = k = 0
+
+            while(i < len(L) and j < len(M)):
+                if(L[i] < M[j]):
+                    array[k] = L[i]
+                    i+=1
+                else:
+                    array[k] = M[j]
+                    j+=1;   
+                k+=1
+            
+            while(i < len(L)):
+                array[k] = L[i]
+                i+=1
+                k+=1
+            while(j < len(M)):
+                array[k]=M[j]
+                j+=1
+                k+=1
+            
+            
+
 
         

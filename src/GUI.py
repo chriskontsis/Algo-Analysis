@@ -52,7 +52,7 @@ class AlgorithmRuntimeVisualizer(QWidget):
 
         if algorithm_type == "Sorting":
             self.algorithm_combobox.addItem("Bubble Sort")
-            self.algorithm_combobox.addItem("Selection Sort")
+            self.algorithm_combobox.addItem("Merge Sort")
        
         elif algorithm_type == "Dynamic Programming":
             self.algorithm_combobox.addItem("Fibonacci Sequence")
@@ -86,6 +86,7 @@ class AlgorithmRuntimeVisualizer(QWidget):
         ax.set_xlabel('Input Size')
         ax.set_ylabel('Runtime (seconds)')
         ax.set_title('Algorithm Runtime Analysis')
+        ax.set_ylim(0, 2)
         self.canvas.draw()
 
 # Create a QApplication instance
