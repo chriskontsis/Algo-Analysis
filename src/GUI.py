@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushBut
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 from Sorting_Algorithm import SortingAlgorithm
+from Dynamic_Programming import DynamicProgramming
 
 class AlgorithmRuntimeVisualizer(QWidget):
     def __init__(self):
@@ -69,6 +70,8 @@ class AlgorithmRuntimeVisualizer(QWidget):
         # Retrieve the appropriate algorithm class based on the selected type
         if algorithm_type == "Sorting":
             algorithm_class = SortingAlgorithm
+        if algorithm_type == "Dynamic Programming":
+            algorithm_class = DynamicProgramming
 
         # Create an instance of the algorithm class and run the algorithm
         algorithm = algorithm_class()

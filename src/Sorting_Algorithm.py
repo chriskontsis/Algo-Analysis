@@ -5,7 +5,7 @@ class SortingAlgorithm:
         self.runtime_data = ([],[])
 
     def run(self, algo_name):
-        input_sizes = [10,50,100,200,500,1000,2000,5000]
+        input_sizes = [10,50,100,200,500,1000,2000,4000]
 
         start_time = time.time()
 
