@@ -57,7 +57,7 @@ class AlgorithmRuntimeVisualizer(QWidget):
        
         elif algorithm_type == "Dynamic Programming":
             self.algorithm_combobox.addItem("Fibonacci Sequence")
-            self.algorithm_combobox.addItem("Longest Common Subsequence")
+            self.algorithm_combobox.addItem("Longest Increasing Subsequence")
 
         elif algorithm_type == "Graph Algorithms":
             self.algorithm_combobox.addItem("Dijkstra's Algorithm")

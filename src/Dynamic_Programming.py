@@ -1,5 +1,6 @@
 import random
 import time
+import bisect
 
 class DynamicProgramming:
     def __init__(self):
@@ -12,6 +13,7 @@ class DynamicProgramming:
 
         algorithms = {
             "Fibonacci Sequence":self.fib,
+            "Longest Increasing Subsequence":self.LIS
         }
 
         algorithm = algorithms[algo_name]
@@ -34,6 +36,16 @@ class DynamicProgramming:
 
         for i in range(2, len(arr)+1):
             fib[i] = fib[i-1] + fib[i-2]
+            
+    def LIS(self, arr):
+        dp = []
+        for elem in arr:
+            ind = bisect.bisect_left(dp, elem)
+            if ind == len(dp):
+                dp.append(elem);
+            else:
+                dp[ind] = elem;
+        
         
         
 
