@@ -9,8 +9,6 @@ class DynamicProgramming:
     def run(self, algo_name):
         input_sizes = [10,50,100,200,500,1000,2000,4000]
 
-        start_time = time.time()
-
         algorithms = {
             "Fibonacci Sequence":self.fib,
             "Longest Increasing Subsequence":self.LIS
